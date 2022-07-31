@@ -19,6 +19,7 @@ let courses = [
         id: 3, name: "Database Management"
     }
 ];
+
 app.use(router, cors(), express.json(), 
     express.urlencoded({
         extended: true
