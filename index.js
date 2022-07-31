@@ -25,6 +25,10 @@ app.use(router, express.json(),
 );
 app.listen(port);
 
+app.get('/', (req, res)=> {
+    res.send(courses);
+});
+
 router.get('^/$|/courses', (req, res)=> {
     res.send(courses);
 });
