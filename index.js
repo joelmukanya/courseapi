@@ -1,8 +1,9 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const port = parseInt(process.env.port) || 3000;
+const port = parseInt(process.env.PORT) || 4040;
 // Create a router
 const router = express.Router();
 // Data
