@@ -26,7 +26,7 @@ app.listen(port, ()=> {
     console.log(`Server is running at port ${port}`);
 })
 
-router.get('/', (req, res)=> {
+router.get('^/$|/courses', (req, res)=> {
     res.send(courses);
 });
 
