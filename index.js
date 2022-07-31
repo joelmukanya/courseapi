@@ -17,7 +17,11 @@ let courses = [
         id: 3, name: "Database Management"
     }
 ];
-app.use(router, express.json());
+app.use(router, express.json(), 
+    express.urlencoded({
+        extended: true
+    })
+);
 app.listen(port, ()=> {
     console.log(`Server is running at port ${port}`);
 })
