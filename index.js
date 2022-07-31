@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const path = require('path');
 const app = express();
 const port = parseInt(process.env.PORT) || 4040;
@@ -18,16 +19,16 @@ let courses = [
         id: 3, name: "Database Management"
     }
 ];
-app.use(router, express.json(), 
+app.use(router, cors(), express.json(), 
     express.urlencoded({
         extended: true
     })
 );
 app.listen(port);
 
-app.get('/', (req, res)=> {
-    res.send(courses);
-});
+// app.get('/', (req, res)=> {
+//     res.send(courses);
+// });
 
 router.get('^/$|/courses', (req, res)=> {
     res.send(courses);
