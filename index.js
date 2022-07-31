@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 const app = express();
-const port = parseInt(process.env.port) || 4000;
+const port = parseInt(process.env.port) || 3000;
 // Create a router
 const router = express.Router();
 // Data
@@ -22,9 +22,7 @@ app.use(router, express.json(),
         extended: true
     })
 );
-app.listen(port, ()=> {
-    console.log(`Server is running at port ${port}`);
-})
+app.listen(port);
 
 router.get('^/$|/courses', (req, res)=> {
     res.send(courses);
